@@ -1,0 +1,79 @@
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  margin: 0;
+  background-color: #173f5f;
+  color: #fff;
+  position: fixed; /* Utilisation de la position fixed */
+  top: 0; /* Fixe en haut de la fenêtre */
+  left: 0; /* Aligné sur la gauche */
+  right: 0; /* Aligné sur la droite */
+  z-index: 1000; /* Assure que le header reste au-dessus du contenu */
+}
+/* Style du logo */
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Style du texte de connexion */
+.connexion {
+  display: flex;
+  align-items: center;
+}
+
+.connexion button {
+  padding: 8px 15px;
+  background-color: #0563b0;
+  border: none;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style au survol du bouton */
+.connexion button:hover {
+  background-color: #173f5f;
+  color: #fff;
+}
+
+/* Style pour modifier le texte de connexion */
+.connexion span {
+  margin-right: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+/* Style pour les écrans de petites tailles */
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .connexion button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .connexion span {
+    font-size: 14px;
+  }
+}
