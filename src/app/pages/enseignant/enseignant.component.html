@@ -1,0 +1,52 @@
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h3>Menu</h3>
+  </div>
+
+    <ul class="sidebar-menu">
+      <li><a routerLink="/accueil" [class.selected-menu]="pageTitle === 'Accueil'">Retour à l'accueil</a></li>
+      <li><a (click)="changeContent('accueil')" [class.selected-menu]="pageTitle === 'Accueil'">Accueil</a></li>
+      <li><a (click)="changeContent('mes_cours')" [class.selected-menu]="pageTitle === 'Mes Cours'">Mes Cours</a></li>
+    </ul>
+  </div>
+
+<div class="content">
+  <h1 class="welcome-text">Bienvenue {{ userData.nom }} {{ userData.prenom }}</h1>
+  <div *ngIf="userRole === 'enseignant'" class="user-info">
+    <p class="user-role">Connecté(e) en tant qu'enseignant</p>
+    <p class="user-email">Email : {{ userEmail }}</p>
+  </div>
+
+  <!-- Liste des cours -->
+<div *ngIf="userRole === 'enseignant' && pageTitle === 'Mes Cours'" class="cours-list">
+  <h2>Mes Cours</h2>
+  <ul>
+    <li *ngFor="let cours of coursList" class="cours-item">
+      <div class="cours-title">{{ cours.intitule }}</div>
+      <div class="cours-syllabus">{{ cours.syllabus }}</div>
+    </li>
+  </ul>
+</div>
+
+  <div *ngIf="userData && userData.nom" class="user-info">
+    <table class="table-info">
+      <tr>
+        <th>Nom</th>
+        <td>{{ userData.nom }}</td>
+      </tr>
+      <tr>
+        <th>Prénom</th>
+        <td>{{ userData.prenom }}</td>
+      </tr>
+
+
+      <tr>
+        <th>Téléphone</th>
+        <td>{{ userData.telephone }}</td>
+      </tr>
+    </table>
+  </div>
+
+
+
+</div>

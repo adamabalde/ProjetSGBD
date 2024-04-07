@@ -1,0 +1,203 @@
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.selected-menu {
+  background-color: #ddd;
+  color: #173f5f;
+  font-weight: bold;
+}
+
+
+.sidebar-header {
+  padding: 10px;
+  text-align: center;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  padding: 8px 16px;
+}
+
+.sidebar-menu li a {
+  text-decoration: none;
+  color: #173f5f;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sidebar-menu li a:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+/* Content styles */
+.content {
+  margin-left: 220px;
+  padding: 16px;
+  margin-top: 50px;
+}
+
+.welcome-text {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user-role {
+  font-weight: bold;
+  color: #008000; /* Green color for user role */
+  font-size: 20px;
+  text-align: center;
+}
+
+.user-email {
+  font-size: 18px;
+  text-align: center;
+}
+
+.user-info {
+  margin-top: 20px;
+}
+
+/* Style du tableau */
+.table-info {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Ombre douce pour le tableau */
+}
+
+.table-info th, .table-info td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.table-info th {
+  background-color: #f1f1f1;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table-info td {
+  font-size: 16px;
+}
+
+.table-info tr:nth-child(even) {
+  background-color: #f9f9f9; /* Couleur de fond pour les lignes paires */
+}
+
+.table-info tr:hover {
+  background-color: #f0f0f0; /* Couleur de fond au survol */
+}
+
+.table-info td:first-child {
+  text-align: left; /* Alignement à gauche pour la première colonne */
+}
+
+/* Style de la liste des cours */
+.cours-list {
+  margin-top: 30px;
+}
+
+.cours-list h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #173f5f;
+  text-align: center;
+}
+
+.cours-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cours-item {
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px #173f5f;
+}
+
+.cours-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #173f5f;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.cours-syllabus {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
+.cours-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+
+/* Style de la section 'Donner avis' */
+.avis-content {
+  margin-top: 30px;
+}
+
+.avis-content h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #173f5f;
+  text-align: center;
+}
+
+.avis-content p {
+  font-size: 20px;
+  color: #e60a0a;
+  text-align: center;
+  margin-top: 25px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/* Style de la section 'Recueillir avis' */
+.recueillir-avis-content {
+  margin-top: 30px;
+}
+
+.recueillir-avis-content h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #173f5f;
+  text-align: center;
+}
+
+.recueillir-avis-content p {
+  font-size: 20px;
+  color: #e60a0a;
+  text-align: center;
+  margin-top: 25px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

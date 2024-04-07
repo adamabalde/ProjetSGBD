@@ -1,0 +1,72 @@
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h3>Menu</h3>
+  </div>
+
+    <ul class="sidebar-menu">
+      <li><a routerLink="/accueil" [class.selected-menu]="pageTitle === 'Accueil'">Retour à l'accueil</a></li>
+      <li><a (click)="changeContent('accueil')" [class.selected-menu]="pageTitle === 'Accueil'">Accueil</a></li>
+      <li *ngIf="!isEtudiantResponsable"><a (click)="changeContent('avis')" [class.selected-menu]="pageTitle === 'Donner avis'">Donner avis</a></li>
+      <li *ngIf="isEtudiantResponsable"><a (click)="changeContent('recueillir_avis')" [class.selected-menu]="pageTitle === 'Recueillir avis'">Recueillir avis</a></li>
+      <li><a (click)="changeContent('cours')" [class.selected-menu]="pageTitle === 'Cours'">Cours</a></li>
+    </ul>
+  </div>
+
+<div class="content">
+  <h1 class="welcome-text">Bienvenue {{ userData.nom }} {{ userData.prenom }}</h1>
+
+  <div *ngIf="userRole === 'etudiant' && userEmail === 'adja@esp.sn'" class="user-info">
+    <p class="user-role">Connecté(e) en tant qu'étudiant responsable</p>
+    <p class="user-email">Email : {{ userEmail }}</p>
+  </div>
+  <div *ngIf="userRole === 'etudiant' && userEmail !== 'adja@esp.sn'" class="user-info">
+    <p class="user-role">Connecté(e) en tant qu'étudiant</p>
+    <p class="user-email">Email : {{ userEmail }}</p>
+  </div>
+  <div *ngIf="userData && userData.nom" class="user-info">
+    <table class="table-info">
+      <tr>
+        <th>Nom</th>
+        <td>{{ userData.nom }}</td>
+      </tr>
+      <tr>
+        <th>Prénom</th>
+        <td>{{ userData.prenom }}</td>
+      </tr>
+      <tr>
+        <th>Classe</th>
+        <td>{{ userData.classe }}</td>
+      </tr>
+      <tr>
+        <th>Département</th>
+        <td>{{ userData.departement }}</td>
+      </tr>
+      <tr>
+        <th>Téléphone</th>
+        <td>{{ userData.telephone }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Liste des cours -->
+  <div *ngIf="coursList && coursList.length > 0" class="cours-list">
+    <h2>Liste des cours</h2>
+    <ul>
+      <li *ngFor="let cours of coursList" class="cours-item">
+        <div class="cours-title">{{ cours.intitule }}</div>
+        <div class="cours-syllabus">{{ cours.syllabus }}</div>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="pageTitle === 'Donner avis'" class="avis-content">
+    <h2>{{ pageTitle }}</h2>
+    <p>{{ pageContent }}</p>
+  </div>
+
+  <!-- Section pour le contenu de 'recueillir_avis' -->
+  <div *ngIf="pageTitle === 'Recueillir avis'" class="recueillir-avis-content">
+    <h2>{{ pageTitle }}</h2>
+    <p>{{ pageContent }}</p>
+  </div>
+</div>

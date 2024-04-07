@@ -11,6 +11,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { EtudiantComponent } from './pages/etudiant/etudiant.component';
+import { EnseignantComponent } from './pages/enseignant/enseignant.component'; // Importez HttpClientModule
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     ConnexionComponent,
     InscriptionComponent,
+    EtudiantComponent,
+    EnseignantComponent,
 
   ],
   imports: [
@@ -29,6 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
