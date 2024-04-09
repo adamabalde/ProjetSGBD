@@ -62,11 +62,35 @@
   <div *ngIf="pageTitle === 'Donner avis'" class="avis-content">
     <h2>{{ pageTitle }}</h2>
     <p>{{ pageContent }}</p>
+
+    <select [(ngModel)]="selectedCoursId" name="cours" id="cours" class="form-control">
+      <option *ngFor="let cours of coursList" [value]="cours.idCours">{{ cours.intitule }}</option>
+    </select>
+
+    <textarea [(ngModel)]="avis" name="avis" id="avis" rows="4" placeholder="Exprimez votre avis"></textarea>
+
+    <button (click)="envoyerAvis()">Envoyer l'avis</button>
   </div>
 
-  <!-- Section pour le contenu de 'recueillir_avis' -->
-  <div *ngIf="pageTitle === 'Recueillir avis'" class="recueillir-avis-content">
-    <h2>{{ pageTitle }}</h2>
-    <p>{{ pageContent }}</p>
+
+  <div *ngIf="isEtudiantResponsable && avisEtudiantList.length > 0" class="avis-etudiants">
+    <h2>Avis des étudiants</h2>
+    <ul class="avis-list">
+      <li *ngFor="let avis of avisEtudiantList" class="avis-item">
+        <div class="avis-content">
+          <p class="avis-student-name"><strong>{{ avis.nomEtudiant }} {{ avis.prenomEtudiant }}</strong></p>
+          <p class="avis-text">{{ avis.avis }}</p>
+          <p class="avis-info"><strong>ID Cours:</strong> {{ avis.idCours }}</p>
+          <!-- Ajoutez d'autres balises pour afficher d'autres colonnes si nécessaire -->
+        </div>
+      </li>
+    </ul>
   </div>
+
+  <div *ngIf="isEtudiantResponsable && avisEtudiantList.length === 0" class="avis-etudiants">
+    <p>Aucun avis des étudiants n'a été récupéré pour le moment.</p>
+  </div>
+
+
+
 </div>
